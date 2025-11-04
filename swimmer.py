@@ -4,7 +4,7 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import datetime
 import json
-from streamlit_option_menu import option_menu
+# from streamlit_option_menu import option_menu
 import matplotlib.pyplot as plt
 import altair as alt
 
@@ -59,12 +59,10 @@ def main():
 
     # Sidebar navigation
     with st.sidebar:
-        selected = option_menu(
-            menu_title="Navigation",
-            options=["Dashboard", "Log Session", "CSS Test", "Targets"],
-            icons=["bar-chart", "pencil", "calculator", "target"],
-            menu_icon="cast",
-            default_index=0,
+        selected = st.selectbox(
+            "Navigation",
+            ["Dashboard", "Log Session", "CSS Test", "Targets"],
+            index=0
         )
 
     # Banner
